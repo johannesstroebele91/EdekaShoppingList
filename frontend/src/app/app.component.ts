@@ -12,4 +12,7 @@ export class AppComponent {
 
   title = 'Family Recipes';
 
+  onClick (){
+    console.log("hello");
+  }
 }

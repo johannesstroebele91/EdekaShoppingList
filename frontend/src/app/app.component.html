@@ -1,8 +1,37 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
+
   <h1>Welcome to {{ title }}!</h1>
-  <label for="name">Insert your name below:</label>
-  <input id="name" type="text" [(ngModel)]="name">
-  <p>Nice to meet you {{ name }}</p>
+
+  <h2>2-way binding: [(ngModel)]="name"</h2>
+  <input [(ngModel)]="name">
+
+  <br>
+  <br>
+
+  <h2>Types of 1-way binding:</h2>
+
+  <br>
+  <ul>
+    <li>Interpolation: 1-way (Model to View): {{ name }}</li>
+    <p>Nice to meet you {{ name }}</p>
+
+    <br>
+
+    <li>Event: 1-way (View to Model): (click)="onClick()</li>
+    <button (click)="onClick()">Click</button>
+    <br>
+    <br>
+
+    <li>Property: 1-way (Model to View): [ngModel]="name"</li>
+    <input [ngModel]="name">
+    <p>Same code but without () -> does not sync!</p>
+    <br>
+
+
+    <li>Style: 1-way (Model to View)</li>
+    <p [style.font-size.px]="10">Student</p>
+  </ul>
+
 </div>
 <router-outlet></router-outlet>
