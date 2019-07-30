@@ -1,0 +1,21 @@
+{
+  "name": "familyrecipes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "ng serve --open --port 4800",
+    "build": "ng build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johannesstroebele91/FamilyRecipes.git"
+  },
+  "author": "JohannesStroebele",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/johannesstroebele91/FamilyRecipes/issues"
+  },
+  "homepage": "https://github.com/johannesstroebele91/FamilyRecipes#readme"
+}
