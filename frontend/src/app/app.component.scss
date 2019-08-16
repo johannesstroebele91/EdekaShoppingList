@@ -1,0 +1,15 @@
+.container{
+  min-width: 580px;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 36px;
+}
+.header-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 4em;
+  width: 100%;
+  z-index: -1;
+  background-color: #3F51B5;
+}

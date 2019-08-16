@@ -1,0 +1,27 @@
+<mat-toolbar color="primary" class="container">
+      <mat-toolbar-row >
+        <span>Edeka Einkaufszettel</span>
+
+        <span class="example-spacer"></span>
+
+        <div>
+          <a class="nav-spacing">Recipes</a>
+          <a class="nav-spacing">Shopping List</a>
+          <mat-icon class="nav-spacing">save</mat-icon>
+          <mat-icon class="nav-spacing">autorenew</mat-icon>
+          <button mat-icon-button [matMenuTriggerFor]="menu" class="hamburger-menu" aria-hidden="false" aria-label="Example user verified icon">
+            <mat-icon id="menu-icon">menu</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item>
+              <mat-icon>save</mat-icon>
+              <span>Save data</span>
+            </button>
+            <button mat-menu-item disabled>
+              <mat-icon>autorenew</mat-icon>
+              <span>Fetch data</span>
+            </button>
+          </mat-menu>
+        </div>
+      </mat-toolbar-row>
+  </mat-toolbar>
