@@ -9,10 +9,19 @@
 #menu-icon {
   color: white;
 }
+
 .hamburger-menu {
   background-color: transparent;
   border-color: transparent;
 }
-.nav-spacing {
-  padding: 1em 0 1em 1em;
+
+.desktop-menu-spacing {
+  margin: 0 0 0 1.2em;
+}
+
+mat-toolbar-row a {
+  text-decoration: none;
+  font-size: medium;
+  font-weight: normal;
+  color: white;
 }
