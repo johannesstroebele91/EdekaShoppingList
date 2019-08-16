@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from '../menuitem';
+import {BreakpointObserver} from '@angular/cdk/layout';
 
 @Component({
   selector: 'app-header',
@@ -13,8 +14,22 @@ export class HeaderComponent implements OnInit {
     {routerLinkName: 'shopping-list', iconName: 'list', itemName: 'Shopping List'},
   ];
 
-  constructor() { }
+  constructor(public breakpointObserver: BreakpointObserver) {}
+
+  mobileScreen = this.breakpointObserver.isMatched('(max-width: 599px)');
 
   ngOnInit() {
+
+    this.breakpointObserver.observe([
+      '(min-width: 599px)'
+    ]).subscribe(result => {
+      if (result.matches) {
+          this.mobileScreen = true;
+          console.log(this.mobileScreen);
+      } else {
+        this.mobileScreen = false;
+        console.log(this.mobileScreen);
+      }
+    });
   }
 }

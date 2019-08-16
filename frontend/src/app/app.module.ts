@@ -12,6 +12,7 @@ import { RecipeItemComponent } from './recipes/recipe-list/recipe-item/recipe-it
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
 import { MatButtonModule, MatIconModule, MatMenuModule, MatToolbarModule} from '@angular/material';
+import { LayoutModule } from '@angular/cdk/layout';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { MatButtonModule, MatIconModule, MatMenuModule, MatToolbarModule} from '
     MatMenuModule,
     MatToolbarModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    LayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
