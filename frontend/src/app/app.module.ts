@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -13,6 +12,7 @@ import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
 import { MatButtonModule, MatIconModule, MatMenuModule, MatToolbarModule} from '@angular/material';
 import { LayoutModule } from '@angular/cdk/layout';
+import {MobileState} from './mobilestate';
 
 @NgModule({
   declarations: [
@@ -35,7 +35,7 @@ import { LayoutModule } from '@angular/cdk/layout';
     MatButtonModule,
     LayoutModule
   ],
-  providers: [],
+  providers: [MobileState],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
