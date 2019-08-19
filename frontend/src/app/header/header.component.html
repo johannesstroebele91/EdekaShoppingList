@@ -1,9 +1,8 @@
 <mat-toolbar color="primary" class="container">
   <mat-toolbar-row >
-    <a routerLink="/">Edeka Einkaufszettel</a>
-    <span class="example-spacer"></span>
-
-    <div *ngIf="mobilestate" id="desktop-menu">
+    <a routerLink="/">Einkaufszettel</a>
+    <span [ngClass]="{'desktop-spacer': !mobileStatus, 'mobile-spacer' : mobileStatus}"></span>
+    <div *ngIf="this.mobileStatus === false" id="desktop-menu">
       <a *ngFor="let menuitem of menuitems" routerLink="/{{menuitem.routerLinkName}}" class="desktop-menu-spacing">
         {{menuitem.itemName}}
       </a>
@@ -15,7 +14,7 @@
       </button>
     </div>
 
-    <div *ngIf="mobilestate" id="mobile-menu">
+    <div *ngIf="this.mobileStatus" id="mobile-menu">
       <button mat-icon-button [matMenuTriggerFor]="menu" class="hamburger-menu" aria-hidden="false" aria-label="Example user verified icon">
         <mat-icon id="menu-icon">menu</mat-icon>
       </button>

@@ -1,8 +1,7 @@
 <div class="container">
   <app-header></app-header>
-  <span class="header-bg"></span>
-  <app-recipes></app-recipes>
-  <app-shopping-list></app-shopping-list>
+  <span class="header-bg" [ngStyle]="{'height': this.mobileStatus ? '56px' : '64px'}"></span>
+  <app-produkte></app-produkte>
 </div>
 
 <router-outlet></router-outlet>

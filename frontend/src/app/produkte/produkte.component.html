@@ -1,0 +1,10 @@
+<h1>Füge deine Artikel hier hinzu</h1>
+<form (ngSubmit)="hinzufuegenArtikel(f)" #f="ngForm">
+  <label>
+    <input [(ngModel)]="produktName" ngModel name="produktName" required>
+    <button type="submit">Hinzufügen</button>
+  </label>
+  <hr>
+  <h2>Einkaufsliste</h2>
+  <app-produkt (produktClicked)="onremoveProduct(produkt)" *ngFor="let produkt of produkte" [produktName]="produkt"></app-produkt>
+</form>

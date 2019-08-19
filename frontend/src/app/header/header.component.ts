@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from '../menuitem';
-import { MobileState } from '../mobilestate';
+import { BreakpointObserver, BreakpointState} from '@angular/cdk/layout';
 
 @Component({
   selector: 'app-header',
@@ -9,14 +9,27 @@ import { MobileState } from '../mobilestate';
 })
 export class HeaderComponent implements OnInit {
 
-
+  mobileStatus: boolean;
   menuitems: MenuItem [] = [
-    {routerLinkName: 'recipes', iconName: 'fastfood', itemName: 'Recipes'},
-    {routerLinkName: 'shopping-list', iconName: 'list', itemName: 'Shopping List'},
+/*
+    {routerLinkName: 'einkaufsliste', iconName: 'list', itemName: 'Shopping List'},
+*/
   ];
 
-  constructor(private mobilestate: MobileState) {}
+  constructor(public breakpointObserver: BreakpointObserver) {
+  }
 
   ngOnInit() {
+    this.breakpointObserver
+      .observe(['(min-width: 599px)'])
+      .subscribe((state: BreakpointState) => {
+        if (state.matches) {
+          console.log('1. Viewport is desktop - over 599px ');
+          this.mobileStatus = false;
+        } else {
+          console.log('2. Viewport is mobile - under 599px');
+          this.mobileStatus = true;
+        }
+      });
   }
 }
