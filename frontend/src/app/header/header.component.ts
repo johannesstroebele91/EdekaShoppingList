@@ -9,11 +9,11 @@ import { BreakpointObserver, BreakpointState} from '@angular/cdk/layout';
 })
 export class HeaderComponent implements OnInit {
 
-  mobileStatus: boolean;
+  mobileState: boolean;
+
   menuitems: MenuItem [] = [
-/*
-    {routerLinkName: 'einkaufsliste', iconName: 'list', itemName: 'Shopping List'},
-*/
+    {routerLinkName: 'recipes', iconName: 'fastfood', itemName: 'Recipes'},
+    {routerLinkName: 'shopping-list', iconName: 'format_list_bulleted', itemName: 'Shopping List'}
   ];
 
   constructor(public breakpointObserver: BreakpointObserver) {
@@ -25,10 +25,10 @@ export class HeaderComponent implements OnInit {
       .subscribe((state: BreakpointState) => {
         if (state.matches) {
           console.log('1. Viewport is desktop - over 599px ');
-          this.mobileStatus = false;
+          this.mobileState = false;
         } else {
           console.log('2. Viewport is mobile - under 599px');
-          this.mobileStatus = true;
+          this.mobileState = true;
         }
       });
   }

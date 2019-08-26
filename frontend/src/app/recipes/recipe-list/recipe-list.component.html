@@ -1,1 +1,20 @@
-<p>recipe-list works!</p>
+<div class="container">
+
+  <button id="btn-new-recipe" mat-raised-button color="primary">New recipe</button>
+
+  <hr>
+
+  <a class="recipe-field" href="#" *ngFor="let recipe of recipes">
+    <div>
+      <h4>{{recipe.name}}</h4>
+      <p>{{recipe.description}}</p>
+    </div>
+    <img src="{{recipe.imagePath}}"
+         alt="{{recipe.name}}"
+         style="max-height: 100px;">
+  </a>
+
+  <app-recipe-item></app-recipe-item>
+</div>
+<br>
+

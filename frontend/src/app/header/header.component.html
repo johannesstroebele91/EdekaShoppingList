@@ -1,33 +1,40 @@
-<mat-toolbar color="primary" class="container">
-  <mat-toolbar-row >
-    <a routerLink="/">Einkaufszettel</a>
-    <span [ngClass]="{'desktop-spacer': !mobileStatus, 'mobile-spacer' : mobileStatus}"></span>
-    <div *ngIf="this.mobileStatus === false" id="desktop-menu">
-      <a *ngFor="let menuitem of menuitems" routerLink="/{{menuitem.routerLinkName}}" class="desktop-menu-spacing">
+<div id="header">
+
+  <a routerLink="/">Einkaufszettel</a>
+
+  <div>
+    <div *ngIf="this.mobileState === false">
+      <a *ngFor="let menuitem of menuitems" routerLink="/{{menuitem.routerLinkName}}">
         {{menuitem.itemName}}
       </a>
-      <button mat-icon-button>
-        <mat-icon>save</mat-icon>
-      </button>
-      <button mat-icon-button>
-        <mat-icon >autorenew</mat-icon>
-      </button>
+      <a href="#">Save Data</a>
+      <a href="#">Fetch Data</a>
     </div>
 
-    <div *ngIf="this.mobileStatus" id="mobile-menu">
-      <button mat-icon-button [matMenuTriggerFor]="menu" class="hamburger-menu" aria-hidden="false" aria-label="Example user verified icon">
-        <mat-icon id="menu-icon">menu</mat-icon>
+    <button mat-icon-button
+            *ngIf="this.mobileState"
+             [matMenuTriggerFor]="menu"
+            class="hamburger-menu"
+            aria-hidden="false" aria-label="Example user verified icon">
+      <mat-icon id="menu-icon">menu</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <a id ="mobile-menu-items" *ngFor="let menuitem of menuitems" routerLink="/{{menuitem.routerLinkName}}">
+        <button mat-menu-item>
+          <mat-icon>{{menuitem.iconName}}</mat-icon>
+          <span>{{menuitem.itemName}}</span>
+        </button>
+      </a>
+
+      <button mat-menu-item>
+        <mat-icon>save</mat-icon>
+        <span>Save data</span>
       </button>
-      <mat-menu #menu="matMenu">
-        <button mat-menu-item>
-          <mat-icon>save</mat-icon>
-          <span>Save data</span>
-        </button>
-        <button mat-menu-item>
-          <mat-icon>autorenew</mat-icon>
-          <span>Fetch data</span>
-        </button>
-      </mat-menu>
-    </div>
-  </mat-toolbar-row>
-</mat-toolbar>
+      <button mat-menu-item>
+        <mat-icon>autorenew</mat-icon>
+        <span>Fetch data</span>
+      </button>
+    </mat-menu>
+
+  </div>
+</div>

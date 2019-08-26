@@ -1,35 +1,30 @@
 import {Component,  OnInit} from '@angular/core';
-import { PRODUKTE } from '../mock-produkte';
 
 @Component({
   selector: 'app-produkte',
-  templateUrl: './produkte.component.html',
-  styleUrls: ['./produkte.component.scss']
+  templateUrl: './products.component.html',
+  styleUrls: ['./products.component.scss']
 })
-export class ProdukteComponent implements OnInit {
+export class ProductsComponent implements OnInit {
 
-  // produkte = PRODUKTE;
-  produkte = ['Milch', 'Karotten', 'Käse'];
-  produktName: string;
+  // products = PRODUCTS;
+  products = ['Milch', 'Karotten', 'Käse'];
+  productName: string;
 
   constructor() {
   }
   ngOnInit(): void {
   }
 
-  hinzufuegenArtikel(form) {
-    // this.produkte.push(this.produktName);
+  addArticle(form) {
+    // this.products.push(this.produktName);
     if (form.valid) {
-      this.produkte.push(form.value.produktName);
+      this.products.push(form.value.produktName);
     }
   }
 
-  onremoveProduct(produktName: string) {
-    this.produkte = this.produkte.filter(p => p !== produktName);
+  onremoveProduct(productName: string) {
+    this.products = this.products.filter(p => p !== productName);
   }
 
 }
-
-
-
-/*  */

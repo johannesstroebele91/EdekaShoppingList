@@ -7,7 +7,7 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 })
 export class ProductComponent implements OnInit {
 
-  // To get data from outside (produ
+  // To get data from outside -> make it bindable from the outside
   @Input() productName: string;
   @Output() productClicked = new EventEmitter();
 
@@ -19,5 +19,4 @@ export class ProductComponent implements OnInit {
   onClicked() {
     this.productClicked.emit();
   }
-
 }

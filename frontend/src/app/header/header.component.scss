@@ -2,15 +2,6 @@
   padding: 0 14px;
 }
 
-.desktop-spacer {
-  flex: 1 1 auto;
-}
-
-.mobile-spacer {
-  text-align: right;
-  width: 100%;
-}
-
 #menu-icon {
   color: white;
 }
@@ -20,13 +11,24 @@
   border-color: transparent;
 }
 
-#desktop-menu  {
-  margin: 0 0 0 1.2em;
+#header {
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-mat-toolbar-row a {
+#header a {
   text-decoration: none;
   font-size: medium;
   font-weight: normal;
   color: white;
+  padding: 24px 12px;
+}
+
+#mobile-menu-items {
+  text-decoration: none;
+  font-size: medium;
+  font-weight: normal;
+  color: grey;
 }

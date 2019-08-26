@@ -1,4 +1,4 @@
-export class Produkt {
+export class Product {
   name: string;
   einheit: string;
   menge: number;
