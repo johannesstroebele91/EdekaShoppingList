@@ -1,4 +1,19 @@
 <div class="container">
   <p>The shopping list is here</p>
   <app-shopping-edit></app-shopping-edit>
+  <ul>
+    <li></li>
+  </ul>
+  <mat-list>
+    <h3 mat-subheader>First shopping list</h3>
+    <mat-list-item *ngFor="let ingredient of ingredients">
+      <p mat-line>{{ingredient.name}} ({{ingredient.amount}} {{ingredient.unit}})</p>
+    </mat-list-item>
+    <br>
+    <mat-divider></mat-divider>
+    <h3 mat-subheader>Second shopping list</h3>
+    <mat-list-item *ngFor="let ingredient of ingredients">
+      <p mat-line>{{ingredient.name}} ({{ingredient.amount}} {{ingredient.unit}})</p>
+    </mat-list-item>
+  </mat-list>
 </div>

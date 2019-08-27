@@ -1,3 +1,5 @@
+// TODO delete later
+
 import {Component,  OnInit} from '@angular/core';
 
 @Component({

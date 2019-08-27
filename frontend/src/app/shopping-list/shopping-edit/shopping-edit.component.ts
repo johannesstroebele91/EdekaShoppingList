@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShoppingEditComponent implements OnInit {
 
+  value = 'Clear me';
+
   constructor() { }
 
   ngOnInit() {
