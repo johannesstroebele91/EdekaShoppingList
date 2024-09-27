@@ -1,0 +1,12 @@
+<!--TODO delete later-->
+
+<h1>Füge deine Artikel hier hinzu</h1>
+<form (ngSubmit)="addArticle(f)" #f="ngForm">
+  <label>
+    <input [(ngModel)]="productName" ngModel name="produktName" required>
+    <button type="submit">Hinzufügen</button>
+  </label>
+  <hr>
+  <h2>Einkaufsliste</h2>
+  <app-product (productClicked)="onremoveProduct(product)" *ngFor="let product of products" [productName]="product"></app-product>
+</form>

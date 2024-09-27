@@ -2,10 +2,33 @@
   padding: 0 14px;
 }
 
-.example-spacer {
-  flex: 1 1 auto;
-}
-
 #menu-icon {
   color: white;
+}
+
+.hamburger-menu {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+#header {
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#header a {
+  text-decoration: none;
+  font-size: medium;
+  font-weight: normal;
+  color: white;
+  padding: 24px 12px;
+}
+
+#mobile-menu-items {
+  text-decoration: none;
+  font-size: medium;
+  font-weight: normal;
+  color: grey;
 }

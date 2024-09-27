@@ -1,0 +1,40 @@
+<div id="header">
+
+  <a routerLink="/">Einkaufszettel</a>
+
+  <div>
+    <div *ngIf="this.mobileState === false">
+      <a *ngFor="let menuitem of menuitems" routerLink="/{{menuitem.routerLinkName}}">
+        {{menuitem.itemName}}
+      </a>
+      <a href="#">Save Data</a>
+      <a href="#">Fetch Data</a>
+    </div>
+
+    <button mat-icon-button
+            *ngIf="this.mobileState"
+             [matMenuTriggerFor]="menu"
+            class="hamburger-menu"
+            aria-hidden="false" aria-label="Example user verified icon">
+      <mat-icon id="menu-icon">menu</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <a id ="mobile-menu-items" *ngFor="let menuitem of menuitems" routerLink="/{{menuitem.routerLinkName}}">
+        <button mat-menu-item>
+          <mat-icon>{{menuitem.iconName}}</mat-icon>
+          <span>{{menuitem.itemName}}</span>
+        </button>
+      </a>
+
+      <button mat-menu-item>
+        <mat-icon>save</mat-icon>
+        <span>Save data</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>autorenew</mat-icon>
+        <span>Fetch data</span>
+      </button>
+    </mat-menu>
+
+  </div>
+</div>
